@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Standalone (Get started) &mdash; CloudsStorm 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Package (Advanced Usage)" href="advanced-usage.html" />
+    <link rel="prev" title="1. Installation" href="install.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CloudsStorm
+          
+
+          
+            
+            <img src="_static/CloudsStormLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                41f427a
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Standalone (Get started)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-example">2.1. Get the Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directory-structure">2.1.1. Directory structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cloud-information-syntax">2.2. Cloud Information Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-databases">2.2.1. Cloud databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-credentials">2.2.2. Cloud credentials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#infrastructure-description-syntax">2.3. Infrastructure Description Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#top-topology-description">2.3.1. Top-topology description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sub-topology-description">2.3.2. Sub-topology description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#infrastructure-code-syntax">2.4. Infrastructure Code Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#seq-operation">2.4.1. ‘SEQ’ operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loop-operation">2.4.2. ‘LOOP’ operation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logs-syntax">2.5. Logs Syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-usage.html">3. Package (Advanced Usage)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for-developers.html">4. Source (For developers)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">5. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CloudsStorm</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Standalone (Get started)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="standalone-get-started">
+<h1>2. Standalone (Get started)<a class="headerlink" href="#standalone-get-started" title="Permalink to this headline">¶</a></h1>
+<p>The tutorial in this section will teach you how to use CloudsStorm in the way of standalone. We will start with examples to introduce basic functionality of CloudsStorm. This example will show how to leverage CloudsStorm to do data processing with hadoop. Meanwhile, We will describe the basic syntax of user credentials, user databases, infrastructure description and infrastructure code etc, mentioned in the framework overview <a class="reference internal" href="index.html"><span class="doc">Overview</span></a>. The detailed usage of the command line is also demonstrated in this section.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#get-the-example" id="id4">Get the Example</a><ul>
+<li><a class="reference internal" href="#directory-structure" id="id5">Directory structure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cloud-information-syntax" id="id6">Cloud Information Syntax</a><ul>
+<li><a class="reference internal" href="#cloud-databases" id="id7">Cloud databases</a></li>
+<li><a class="reference internal" href="#cloud-credentials" id="id8">Cloud credentials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#infrastructure-description-syntax" id="id9">Infrastructure Description Syntax</a><ul>
+<li><a class="reference internal" href="#top-topology-description" id="id10">Top-topology description</a></li>
+<li><a class="reference internal" href="#sub-topology-description" id="id11">Sub-topology description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#infrastructure-code-syntax" id="id12">Infrastructure Code Syntax</a><ul>
+<li><a class="reference internal" href="#seq-operation" id="id13">‘SEQ’ operation</a></li>
+<li><a class="reference internal" href="#loop-operation" id="id14">‘LOOP’ operation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logs-syntax" id="id15">Logs Syntax</a></li>
+</ul>
+</div>
+<div class="section" id="get-the-example">
+<h2><a class="toc-backref" href="#id4">2.1. Get the Example</a><a class="headerlink" href="#get-the-example" title="Permalink to this headline">¶</a></h2>
+<p>This is an example to do data processing with hadoop using ExoGENI Cloud. You can download the example from Github:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone
+</pre></div>
+</div>
+<p>We will take the example in the directory :code: <cite>ExoGENIHadoopTest/</cite> to show the usage.</p>
+<div class="section" id="directory-structure">
+<h3><a class="toc-backref" href="#id5">2.1.1. Directory structure</a><a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
+<p>In this standalone way to use CloudsStorm, every application has its own directory to store all the required components. In this example, it is the directory <code class="code docutils literal notranslate"><span class="pre">ExoGENIHadoopTest/</span></code>. It is called root directory and organized as</p>
+<ul>
+<li><p class="first">-&gt; Infs/ : All the infrastructure descriptions and required information are in this directory.</p>
+<ul>
+<li><p class="first">-&gt; Topology/ : All the infrastructure descriptions are in this directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li>=&gt; _top.yml : This is the top-topology desciption. It describes the entire infrastructure topology at top-level. See <a class="reference internal" href="#top-topology"><span class="std std-ref">Top-topology description</span></a>.</li>
+<li>=&gt; “$sub-topology.yml” : This is a set of files. Every sub-topology is described in a separated file and the file is named after the sub-topology name. See <a class="reference internal" href="#sub-topology"><span class="std std-ref">Sub-topology description</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">-&gt; UD/ : This directory contains all supported Clouds’ database information, including VM types, computing capacity, data center geolocation, pricing, etc. See <a class="reference internal" href="#cloud-databases"><span class="std std-ref">Cloud databases</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li>=&gt; db.yml : This is an index file to show how to find the database information for a specific Cloud. See <a class="reference internal" href="#database-index"><span class="std std-ref">its syntax</span></a>.</li>
+<li>=&gt; “XCloudDB.yml” : This is a set of files describing different Clouds’ information. For each of them, see <a class="reference internal" href="#database-syntax"><span class="std std-ref">its syntax</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">-&gt; UC/ : This directory contains all supported Clouds’ credentials information. These credentials can be the tokens, key files, which are provided by the user to access Cloud resources. See <a class="reference internal" href="#cloud-credentials"><span class="std std-ref">Cloud credentials</span></a>.</p>
+<blockquote>
+<div><ul class="simple">
+<li>=&gt; cred.yml : This is an index file to show how to find the credential information for a specific Cloud. See <a class="reference internal" href="#credential-index"><span class="std std-ref">its syntax</span></a>.</li>
+<li>=&gt; “XCloudCred.yml” : This is a set of files storing the user’s credentials information according to different Clouds. For each of them, see <a class="reference internal" href="#credential-syntax"><span class="std std-ref">its syntax</span></a>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">-&gt; App/ : This directory contains the infrastructure code and application codes as follows.</p>
+<ul class="simple">
+<li>=&gt; infrasCode.yml : This is the infrastructure code. It defines how to execute operations on the infrastructures.</li>
+<li>=&gt; “application codes” : These are applications logic developed by developers to run on Clouds. In this example, the application program is the ‘WordCount.jar’ to do word count analysis for data processing.</li>
+</ul>
+</li>
+<li><p class="first">-&gt; Logs/ : This directory is <em>automatically generated</em> after executing the infrastructure code.</p>
+<ul class="simple">
+<li>=&gt; CloudsStorm.log : This is the general logging output for CloudsStorm framework. It is in the normal format of logging file. The content is not refreshed every time.</li>
+<li>=&gt; infrasCode.log : This is the logging output for executing infrastructure code. It is also in YAML format. For the detailed syntax, see <a class="reference internal" href="#logs-syntax"><span class="std std-ref">syntax details</span></a>. Every element in this file records the output of the corresponding operation defined in the infrastructure code. It is important to mention that the content is refreshed every time.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>Above files and directories names without double quotations must be exactly the same.</li>
+<li>You do not need to create the directory <code class="code docutils literal notranslate"><span class="pre">Logs/</span></code> and the files in it.</li>
+<li>The syntax of all the files except <code class="code docutils literal notranslate"><span class="pre">CloudsStorm.log</span></code> is based on YAML format.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Credential information is extremely important for a Cloud user. So never make the directory <code class="code docutils literal notranslate"><span class="pre">Infs/UC/</span></code> containing the real credentials public. For example, push these files onto Github. We are also working on encrypting these files to make it more secure.</p>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">We first make symbols clear for syntax description below.
+- <code class="code docutils literal notranslate"><span class="pre">*</span></code> represents repeating the element above.
+- <code class="code docutils literal notranslate"><span class="pre">$</span></code> represents this is a variable.
+- <code class="code docutils literal notranslate"><span class="pre">'A</span> <span class="pre">|</span> <span class="pre">B'</span></code> represents a value can only be selected from ‘A’ or ‘B’.
+- <code class="code docutils literal notranslate"><span class="pre">[A]</span></code> represents the syntax block A is optional.</p>
+</div>
+</div>
+</div>
+<div class="section" id="cloud-information-syntax">
+<h2><a class="toc-backref" href="#id6">2.2. Cloud Information Syntax</a><a class="headerlink" href="#cloud-information-syntax" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of Cloud information, Cloud database information and Cloud credential information. They both work as libraries to provide some essential related Clouds’ information when executing the infrastructure code. The difference is that the Cloud database information is public and can be retrieved from different Clouds. The Cloud credential information needs to be provided by CloudsStorm users to access Clouds on their own budget.</p>
+<p>For both of them, there is an index file to show where the specific file is. The detailed syntax is as follow.</p>
+<div class="section" id="cloud-databases">
+<span id="id1"></span><h3><a class="toc-backref" href="#id7">2.2.1. Cloud databases</a><a class="headerlink" href="#cloud-databases" title="Permalink to this headline">¶</a></h3>
+<p>Cloud database information contains detailed information about data centres for selected Clouds. This information includes:</p>
+<ul class="simple">
+<li>Geographic positioning of each data centre, which can be leveraged to do locality-aware or data-aware provisioning.</li>
+<li>Endpoint information, which describes a data centre’s controller URL needed for actual provisioning.</li>
+<li>VM types (CPU, memory) supported in each data centre and their characteristic data (e.g. price). This information is not application-defined, but provided by our framework.</li>
+</ul>
+<p id="database-index">The database information index file is named as <code class="code docutils literal notranslate"><span class="pre">db.yml</span></code>. It is in YAML format. For basic usage and current supported Clouds, the syntax is:</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cloudDBs:</span>
+<span class="go">- cloudProvider: &#39;EC2 | ExoGENI | EGI&#39;</span>
+<span class="go">  dbInfoFile: $FileName</span>
+<span class="go">- *</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">$FileName</span></code> is the file name containing the concrete database information for this Cloud. This file must be in the same folder with the index file. Its syntax is:</p>
+<div class="code yaml highlight-console notranslate" id="database-syntax"><div class="highlight"><pre><span></span><span class="go">DCMetaInfo:</span>
+<span class="go">- domain: $DC</span>
+<span class="go">  endpoint: $ED</span>
+<span class="go">  country: $Code</span>
+<span class="go">  longitude: $N</span>
+<span class="go">  latitude: $N</span>
+<span class="go">  availability: $N</span>
+<span class="go">  [extraInfo:</span>
+<span class="gp">    $</span>S1: <span class="nv">$S2</span>
+<span class="go">    *]</span>
+<span class="go">  VMMetaInfo:</span>
+<span class="go">  - OS: $OS</span>
+<span class="go">    CPU: $N (vCore)</span>
+<span class="go">    MEM: $N (G)</span>
+<span class="go">    VMType: $Type</span>
+<span class="go">    Price: $N</span>
+<span class="go">    DefaultSSHAccount: $S</span>
+<span class="go">    extraInfo:</span>
+<span class="gp">      $</span>S1: <span class="nv">$S2</span>
+<span class="go">      *</span>
+<span class="go">  - *</span>
+<span class="go">- *</span>
+</pre></div>
+</div>
+<p>There are two levels of elements here.</p>
+<p>The first level is a list of data center information in the field <code class="code docutils literal notranslate"><span class="pre">DCMetaInfo</span></code> . It consists following fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">domain:</th><td class="field-body">The name of the data centre. It dertermins how to refer to this data centre in
+the infrastructure.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">endpoint:</th><td class="field-body">It is usually a URL to determin where to connect to the controller of this data centre to request resources.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">country:</th><td class="field-body">It indicates where the data centre is.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">longitude:</th><td class="field-body">It is the rough longitude of the city where this data centre is located. This is useful when choosing data
+centre with geo-related requirements.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body">The rough latitude.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">availability:</th><td class="field-body">The availability of the data centre indicating the reliability. (Currently not used)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">extraInfo:</th><td class="field-body">This is a set of key-value pairs. They are user-defined data centre information for advanced usage.</td>
+</tr>
+</tbody>
+</table>
+<p>The field <code class="code docutils literal notranslate"><span class="pre">VMMetaInfo</span></code> contains the second level list. It describes the information of virtual machines (VMs) provided by this data centre.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">OS:</th><td class="field-body">The type of the operating system of this VM.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">CPU:</th><td class="field-body">The CPU capacity. It is usually defined as a number of vCores.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">MEM:</th><td class="field-body">The memory capacity. The unit is Gigabyte.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">VMType:</th><td class="field-body">The type name for this kind of VM. It varies with different Clouds.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Price:</th><td class="field-body">The price in dollar per hour, since Cloud adopts the “pay-as-you-go” model.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">DefaultSSHAccount:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Every Cloud has a default ssh account for client to login to the provisioned VM. For instance, the default ssh account for
+‘ubuntu’ VM of EC2 is <code class="code docutils literal notranslate"><span class="pre">ubuntu</span></code>. The default ssh account for VM of ExoGENI is <code class="code docutils literal notranslate"><span class="pre">root</span></code>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">extraInfo:</th><td class="field-body">These are some data centre specific information for provisioning a VM, for example, the image ID of this VM. The detailed definition
+depends on the Cloud.</td>
+</tr>
+</tbody>
+</table>
+<p>This is an example to express Virginia data centre of EC2 in this syntax.</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">DCMetaInfo:</span>
+<span class="go">- domain: &quot;Virginia&quot;</span>
+<span class="go">  endpoint: &quot;ec2.us-east-1.amazonaws.com&quot;</span>
+<span class="go">  country: &quot;USA&quot;</span>
+<span class="go">  longitude: &quot;78.65 W&quot;</span>
+<span class="go">  latitude: &quot;37.43 N&quot;</span>
+<span class="go">  availability: null</span>
+<span class="go">  VMMetaInfo:</span>
+<span class="go">  - OS: &quot;Ubuntu 14.04&quot;</span>
+<span class="go">    CPU: &quot;1&quot;</span>
+<span class="go">    MEM: &quot;0.5&quot;</span>
+<span class="go">    VMType: &quot;t2.nano&quot;</span>
+<span class="go">    Price: &quot;0.0058&quot;</span>
+<span class="go">    DefaultSSHAccount: &quot;ubuntu&quot;</span>
+<span class="go">    extraInfo:</span>
+<span class="go">      AMI: &quot;ami-33e4bc49&quot;</span>
+<span class="go">  - OS: &quot;Ubuntu 14.04&quot;</span>
+<span class="go">    CPU: 1</span>
+<span class="go">    MEM: 1</span>
+<span class="go">    VMType: &quot;t2.micro&quot;</span>
+<span class="go">    Price: &quot;0.0116&quot;</span>
+<span class="go">    DefaultSSHAccount: &quot;ubuntu&quot;</span>
+<span class="go">    extraInfo:</span>
+<span class="go">      AMI: &quot;ami-33e4bc49&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloud-credentials">
+<span id="id2"></span><h3><a class="toc-backref" href="#id8">2.2.2. Cloud credentials</a><a class="headerlink" href="#cloud-credentials" title="Permalink to this headline">¶</a></h3>
+<p>Cloud credential information defines key-value pairs which specify secure tokens needed to access a Cloud or paths of credential files.</p>
+<p>The credential information index file is named as <code class="code docutils literal notranslate"><span class="pre">cred.yml</span></code>. It is in YAML format. For basic usage and current supported Clouds, the syntax is:</p>
+<div class="code yaml highlight-console notranslate" id="credential-index"><div class="highlight"><pre><span></span><span class="go">cloudCreds:</span>
+<span class="go">- cloudProvider: &#39;EC2 | ExoGENI | EGI&#39;</span>
+<span class="go">  credInfoFile: $FileName</span>
+<span class="go">- *</span>
+</pre></div>
+</div>
+<p>It is similar to the syntax of Cloud database index file. <code class="code docutils literal notranslate"><span class="pre">$FileName</span></code> is the file name containing the concrete credential information for this Cloud. This file must be in the same folder with the index file. The detailed credential information is simple. The syntax is shown below.</p>
+<div class="code yaml highlight-console notranslate" id="credential-syntax"><div class="highlight"><pre><span></span><span class="go">credInfo:</span>
+<span class="gp">  $</span>S1: <span class="nv">$S2</span>
+<span class="go">  *</span>
+</pre></div>
+</div>
+<p>It is basically a set of key-value pairs to determin what kinds of credential information is required for this Cloud. For example, the credential information of EC2 is defined as:</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[credInfo:]</span>
+<span class="go">  accessKey: AERAITY3SDZUQ6M7YBSQ</span>
+<span class="go">  secretKey: 6J7uog9sfrfd45sa6Gsy5vgb3bdrtrY6hBxt5t9y</span>
+</pre></div>
+</div>
+<p>The tokens of <code class="code docutils literal notranslate"><span class="pre">accessKey</span></code> and <code class="code docutils literal notranslate"><span class="pre">secretKey</span></code> is filled by the user. Therefore, the resource usage caused by executing the infrastrcutre code is directly charged by EC2 on the user’s account. There is <strong>no broker</strong> in between.</p>
+<p>The credential information for ExoGENI is defined as:</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[credInfo:]</span>
+<span class="go">  userKeyName: user.jks</span>
+<span class="go">  keyAlias: keytest</span>
+<span class="go">  keyPassword: pwdtest</span>
+</pre></div>
+</div>
+<p>It indicates that the user’s credential for ExoGENI is the key file ‘user.jks’. By default, this is the relative path. The file therefore should be in the same folder of this file and named as <code class="code docutils literal notranslate"><span class="pre">user.jks</span></code>. The fields <code class="code docutils literal notranslate"><span class="pre">keyAlias</span></code> and <code class="code docutils literal notranslate"><span class="pre">keyPassword</span></code> are related information to decrypt the key for acutal usage. The concrete fileds vary among different Clouds.</p>
+<p>Actually, some fields’ definition of above Cloud information can be user-defined to support a new Cloud. This is advanced usage, please check <a class="reference internal" href="advanced-usage.html"><span class="doc">Package (Advanced Usage)</span></a>.</p>
+</div>
+</div>
+<div class="section" id="infrastructure-description-syntax">
+<h2><a class="toc-backref" href="#id9">2.3. Infrastructure Description Syntax</a><a class="headerlink" href="#infrastructure-description-syntax" title="Permalink to this headline">¶</a></h2>
+<p>The figure below shows an example topology to demonstrate the partition-based infrastructure management mechanism adopted in CloudsStorm. We classify the application-defined topology description into three levels. The lowest level is the VM level. It describes the types of VMs required, mainly referring to the computing capacities, CPU, memory, etc. The level in the middle is the sub-topology level. It includes descriptions of several VMs in one data center and also describes the Cloud provider from which this data center comes from. The top level is the top-topology level. It includes all the sub-topologies and describes the network connections among these VMs. Internally, the network is defined as a private network, being that it is useful for the application to define the topology as such during the design phase. The actual network and geographical information is then transparent to the application. Otherwise, the IP addresses would need to be dynamically configured after provisioning or there must be an orchestrator to broker communications among sub-topologies, because the public IP address for each VM from the public Cloud is different every time. In addition, there is no actual switch placed among VMs but demonstrating how VMs are connected.</p>
+<img alt="_images/topology_des.png" src="_images/topology_des.png" />
+<div class="section" id="top-topology-description">
+<span id="top-topology"></span><h3><a class="toc-backref" href="#id10">2.3.1. Top-topology description</a><a class="headerlink" href="#top-topology-description" title="Permalink to this headline">¶</a></h3>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">userName: $User</span>
+<span class="go">publicKeyPath: $Path</span>
+<span class="go">topologies:</span>
+<span class="go">- topology: $SubTopology</span>
+<span class="go">  cloudProvider: $Cloud</span>
+<span class="go">  domain: $DC</span>
+<span class="go">  status: &#39;fresh | running | deleted | failed | stopped&#39;</span>
+<span class="go">- ∗</span>
+<span class="go">subnets:</span>
+<span class="go">name: $Subnet</span>
+<span class="go">subnet: $subnet</span>
+<span class="go">netmask: $netmask</span>
+<span class="go">members:</span>
+<span class="go">- vmName: $SubTopology.$Node</span>
+<span class="go">  address: $IP</span>
+<span class="go">- ∗</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sub-topology-description">
+<span id="sub-topology"></span><h3><a class="toc-backref" href="#id11">2.3.2. Sub-topology description</a><a class="headerlink" href="#sub-topology-description" title="Permalink to this headline">¶</a></h3>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">VMs:</span>
+<span class="go"> name: $Node</span>
+<span class="go"> nodeType: $Type</span>
+<span class="go"> OSType: $OS</span>
+<span class="go"> script: $Path</span>
+<span class="go"> - ∗</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="infrastructure-code-syntax">
+<h2><a class="toc-backref" href="#id12">2.4. Infrastructure Code Syntax</a><a class="headerlink" href="#infrastructure-code-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;SEQ | LOOP&#39;</span>
+<span class="go">- ∗</span>
+</pre></div>
+</div>
+<div class="section" id="seq-operation">
+<h3><a class="toc-backref" href="#id13">2.4.1. ‘SEQ’ operation</a><a class="headerlink" href="#seq-operation" title="Permalink to this headline">¶</a></h3>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;SEQ&#39;</span>
+<span class="go">  OpCode:</span>
+<span class="go">  Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
+<span class="go">  [Options:]</span>
+<span class="go">  - [$S1: $S2]</span>
+<span class="go">  - ∗</span>
+<span class="go">  [Command: $String]</span>
+<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loop-operation">
+<h3><a class="toc-backref" href="#id14">2.4.2. ‘LOOP’ operation</a><a class="headerlink" href="#loop-operation" title="Permalink to this headline">¶</a></h3>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;LOOP&#39;</span>
+<span class="go">[Count: $Num]</span>
+<span class="go">[Duration: $Time]</span>
+<span class="go">[Deadline: $Time]</span>
+<span class="go">OpCode:</span>
+<span class="go">- Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
+<span class="go">  [Options:]</span>
+<span class="go">  - [$S1: $S2]</span>
+<span class="go">  - ∗</span>
+<span class="go">  [Command: $CMD]</span>
+<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
+<span class="go">- *</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="logs-syntax">
+<span id="id3"></span><h2><a class="toc-backref" href="#id15">2.5. Logs Syntax</a><a class="headerlink" href="#logs-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- Time: $Time</span>
+<span class="go">Overhead: $Time</span>
+<span class="go">Event:</span>
+<span class="go">  Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
+<span class="go">  Command: $CMD</span>
+<span class="go">  [Options:]</span>
+<span class="go">  - [$S1: $S2]</span>
+<span class="go">  - ∗</span>
+<span class="go">  Log: &#39;on | off&#39;</span>
+<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
+<span class="go">LOG:</span>
+<span class="go">  MSG: $String</span>
+<span class="gp">  $</span>Object_1: <span class="nv">$String</span>
+<span class="go">  *</span>
+<span class="go">- *</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced-usage.html" class="btn btn-neutral float-right" title="3. Package (Advanced Usage)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="1. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Huan Zhou (SNE, University of Amsterdam) and contributors.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>
