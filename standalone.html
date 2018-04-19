@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                41f427a
+                80debbe
               </div>
             
           
@@ -88,7 +88,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Standalone (Get started)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#get-the-example">2.1. Get the Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#see-the-example">2.1. See the Example</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#directory-structure">2.1.1. Directory structure</a></li>
 </ul>
 </li>
@@ -98,16 +98,18 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#infrastructure-description-syntax">2.3. Infrastructure Description Syntax</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#top-topology-description">2.3.1. Top-topology description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sub-topology-description">2.3.2. Sub-topology description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sub-topology-description">2.3.1. Sub-topology description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#top-topology-description">2.3.2. Top-topology description</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#infrastructure-code-syntax">2.4. Infrastructure Code Syntax</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#seq-operation">2.4.1. ‘SEQ’ operation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#loop-operation">2.4.2. ‘LOOP’ operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seq-code-syntax">2.4.1. ‘SEQ’ code syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loop-code-syntax">2.4.2. ‘LOOP’ code syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-system-variables">2.4.3. Some system variables</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#logs-syntax">2.5. Logs Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-lines">2.6. Command Lines</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="advanced-usage.html">3. Package (Advanced Usage)</a></li>
@@ -180,7 +182,7 @@
 <p>The tutorial in this section will teach you how to use CloudsStorm in the way of standalone. We will start with examples to introduce basic functionality of CloudsStorm. This example will show how to leverage CloudsStorm to do data processing with hadoop. Meanwhile, We will describe the basic syntax of user credentials, user databases, infrastructure description and infrastructure code etc, mentioned in the framework overview <a class="reference internal" href="index.html"><span class="doc">Overview</span></a>. The detailed usage of the command line is also demonstrated in this section.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#get-the-example" id="id4">Get the Example</a><ul>
+<li><a class="reference internal" href="#see-the-example" id="id4">See the Example</a><ul>
 <li><a class="reference internal" href="#directory-structure" id="id5">Directory structure</a></li>
 </ul>
 </li>
@@ -190,25 +192,23 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#infrastructure-description-syntax" id="id9">Infrastructure Description Syntax</a><ul>
-<li><a class="reference internal" href="#top-topology-description" id="id10">Top-topology description</a></li>
-<li><a class="reference internal" href="#sub-topology-description" id="id11">Sub-topology description</a></li>
+<li><a class="reference internal" href="#sub-topology-description" id="id10">Sub-topology description</a></li>
+<li><a class="reference internal" href="#top-topology-description" id="id11">Top-topology description</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#infrastructure-code-syntax" id="id12">Infrastructure Code Syntax</a><ul>
-<li><a class="reference internal" href="#seq-operation" id="id13">‘SEQ’ operation</a></li>
-<li><a class="reference internal" href="#loop-operation" id="id14">‘LOOP’ operation</a></li>
+<li><a class="reference internal" href="#seq-code-syntax" id="id13">‘SEQ’ code syntax</a></li>
+<li><a class="reference internal" href="#loop-code-syntax" id="id14">‘LOOP’ code syntax</a></li>
+<li><a class="reference internal" href="#some-system-variables" id="id15">Some system variables</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#logs-syntax" id="id15">Logs Syntax</a></li>
+<li><a class="reference internal" href="#logs-syntax" id="id16">Logs Syntax</a></li>
+<li><a class="reference internal" href="#command-lines" id="id17">Command Lines</a></li>
 </ul>
 </div>
-<div class="section" id="get-the-example">
-<h2><a class="toc-backref" href="#id4">2.1. Get the Example</a><a class="headerlink" href="#get-the-example" title="Permalink to this headline">¶</a></h2>
-<p>This is an example to do data processing with hadoop using ExoGENI Cloud. You can download the example from Github:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone
-</pre></div>
-</div>
-<p>We will take the example in the directory :code: <cite>ExoGENIHadoopTest/</cite> to show the usage.</p>
+<div class="section" id="see-the-example">
+<h2><a class="toc-backref" href="#id4">2.1. See the Example</a><a class="headerlink" href="#see-the-example" title="Permalink to this headline">¶</a></h2>
+<p>There is an example to do data processing with hadoop using ExoGENI Cloud. You can check this <a class="reference external" href="https://github.com/CloudsStorm/ExampleRepo/tree/master/ExoGENIHadoopExp">example on Github</a>.</p>
 <div class="section" id="directory-structure">
 <h3><a class="toc-backref" href="#id5">2.1.1. Directory structure</a><a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
 <p>In this standalone way to use CloudsStorm, every application has its own directory to store all the required components. In this example, it is the directory <code class="code docutils literal notranslate"><span class="pre">ExoGENIHadoopTest/</span></code>. It is called root directory and organized as</p>
@@ -258,7 +258,7 @@
 <p class="first admonition-title">Important</p>
 <ul class="last simple">
 <li>Above files and directories names without double quotations must be exactly the same.</li>
-<li>You do not need to create the directory <code class="code docutils literal notranslate"><span class="pre">Logs/</span></code> and the files in it.</li>
+<li>You do not need to create the directory <code class="code docutils literal notranslate"><span class="pre">Logs/</span></code> and the files in it. You can check the files after executing of this example <a class="reference external" href="https://github.com/CloudsStorm/ExampleRepo/tree/after-exe">here</a>.</li>
 <li>The syntax of all the files except <code class="code docutils literal notranslate"><span class="pre">CloudsStorm.log</span></code> is based on YAML format.</li>
 </ul>
 </div>
@@ -268,11 +268,13 @@
 </div>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
-<p class="last">We first make symbols clear for syntax description below.
-- <code class="code docutils literal notranslate"><span class="pre">*</span></code> represents repeating the element above.
-- <code class="code docutils literal notranslate"><span class="pre">$</span></code> represents this is a variable.
-- <code class="code docutils literal notranslate"><span class="pre">'A</span> <span class="pre">|</span> <span class="pre">B'</span></code> represents a value can only be selected from ‘A’ or ‘B’.
-- <code class="code docutils literal notranslate"><span class="pre">[A]</span></code> represents the syntax block A is optional.</p>
+<p>We first make symbols clear for syntax described below.</p>
+<ul class="last simple">
+<li><code class="code docutils literal notranslate"><span class="pre">*</span></code> represents repeating the element above.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">$</span></code> represents this is a variable.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">'A</span> <span class="pre">|</span> <span class="pre">B'</span></code> represents a value can only be selected from ‘A’ or ‘B’.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">[A]</span></code> represents the syntax block A is optional.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -282,6 +284,7 @@
 <p>For both of them, there is an index file to show where the specific file is. The detailed syntax is as follow.</p>
 <div class="section" id="cloud-databases">
 <span id="id1"></span><h3><a class="toc-backref" href="#id7">2.2.1. Cloud databases</a><a class="headerlink" href="#cloud-databases" title="Permalink to this headline">¶</a></h3>
+<p>For basic usage, Cloud databases information are provided. You can skip this part to -&gt; <a class="reference internal" href="#cloud-credentials"><span class="std std-ref">Cloud credentials</span></a>.</p>
 <p>Cloud database information contains detailed information about data centres for selected Clouds. This information includes:</p>
 <ul class="simple">
 <li>Geographic positioning of each data centre, which can be leveraged to do locality-aware or data-aware provisioning.</li>
@@ -321,31 +324,36 @@
 </pre></div>
 </div>
 <p>There are two levels of elements here.</p>
-<p>The first level is a list of data center information in the field <code class="code docutils literal notranslate"><span class="pre">DCMetaInfo</span></code> . It consists following fields.</p>
+<p>The first level is a list of data centre information in the field <code class="code docutils literal notranslate"><span class="pre">DCMetaInfo</span></code>. It consists of following fields.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">domain:</th><td class="field-body">The name of the data centre. It dertermins how to refer to this data centre in
-the infrastructure.</td>
+<tr class="field-odd field"><th class="field-name">domain:</th><td class="field-body"><p class="first">The name of the data centre. It determines how to refer to this data centre in
+the infrastructure.</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">endpoint:</th><td class="field-body">It is usually a URL to determin where to connect to the controller of this data centre to request resources.</td>
+<tr class="field-even field"><th class="field-name">endpoint:</th><td class="field-body"><p class="first">It is usually a URL to determine where to connect to the controller of this data centre to request resources.</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">country:</th><td class="field-body">It indicates where the data centre is.</td>
+<tr class="field-odd field"><th class="field-name">country:</th><td class="field-body"><p class="first">It indicates where the data centre is.</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">longitude:</th><td class="field-body">It is the rough longitude of the city where this data centre is located. This is useful when choosing data
-centre with geo-related requirements.</td>
+<tr class="field-even field"><th class="field-name">longitude:</th><td class="field-body"><p class="first">It is the rough longitude of the city where this data centre is located. This is useful when choosing data
+centre with geo-related requirements.</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body">The rough latitude.</td>
+<tr class="field-odd field"><th class="field-name">latitude:</th><td class="field-body"><p class="first">The rough latitude.</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">availability:</th><td class="field-body">The availability of the data centre indicating the reliability. (Currently not used)</td>
+<tr class="field-even field"><th class="field-name">availability:</th><td class="field-body"><p class="first">The availability of the data centre indicating the reliability. (Currently not used)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">extraInfo:</th><td class="field-body">This is a set of key-value pairs. They are user-defined data centre information for advanced usage.</td>
+<tr class="field-odd field"><th class="field-name">extraInfo:</th><td class="field-body"><p class="first">This is a set of key-value pairs. They are user-defined data centre information for advanced usage.</p>
+</td>
 </tr>
-</tbody>
-</table>
-<p>The field <code class="code docutils literal notranslate"><span class="pre">VMMetaInfo</span></code> contains the second level list. It describes the information of virtual machines (VMs) provided by this data centre.</p>
-<table class="docutils field-list" frame="void" rules="none">
+<tr class="field-even field"><th class="field-name">VMMetaInfo:</th><td class="field-body"><p class="first">This field contains the second level list. It describes the information of virtual machines (VMs) provided by this data centre.</p>
+<table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -360,11 +368,15 @@ centre with geo-related requirements.</td>
 <tr class="field-odd field"><th class="field-name">Price:</th><td class="field-body">The price in dollar per hour, since Cloud adopts the “pay-as-you-go” model.</td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">DefaultSSHAccount:</th></tr>
-<tr class="field-even field"><td>&#160;</td><td class="field-body">Every Cloud has a default ssh account for client to login to the provisioned VM. For instance, the default ssh account for
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Every Cloud has a default ssh account for the client to login to the provisioned VM. For instance, the default ssh account for
 ‘ubuntu’ VM of EC2 is <code class="code docutils literal notranslate"><span class="pre">ubuntu</span></code>. The default ssh account for VM of ExoGENI is <code class="code docutils literal notranslate"><span class="pre">root</span></code>.</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">extraInfo:</th><td class="field-body">These are some data centre specific information for provisioning a VM, for example, the image ID of this VM. The detailed definition
 depends on the Cloud.</td>
+</tr>
+</tbody>
+</table>
+</td>
 </tr>
 </tbody>
 </table>
@@ -412,13 +424,13 @@ depends on the Cloud.</td>
 <span class="go">  *</span>
 </pre></div>
 </div>
-<p>It is basically a set of key-value pairs to determin what kinds of credential information is required for this Cloud. For example, the credential information of EC2 is defined as:</p>
+<p>It is basically a set of key-value pairs to determine what kinds of credential information is required for this Cloud. For example, the credential information of EC2 is defined as:</p>
 <div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[credInfo:]</span>
 <span class="go">  accessKey: AERAITY3SDZUQ6M7YBSQ</span>
 <span class="go">  secretKey: 6J7uog9sfrfd45sa6Gsy5vgb3bdrtrY6hBxt5t9y</span>
 </pre></div>
 </div>
-<p>The tokens of <code class="code docutils literal notranslate"><span class="pre">accessKey</span></code> and <code class="code docutils literal notranslate"><span class="pre">secretKey</span></code> is filled by the user. Therefore, the resource usage caused by executing the infrastrcutre code is directly charged by EC2 on the user’s account. There is <strong>no broker</strong> in between.</p>
+<p>The tokens of <code class="code docutils literal notranslate"><span class="pre">accessKey</span></code> and <code class="code docutils literal notranslate"><span class="pre">secretKey</span></code> is filled by the user. Therefore, the resource usage caused by executing the infrastructure code is directly charged by EC2 on the user’s account. There is <strong>no broker</strong> in between.</p>
 <p>The credential information for ExoGENI is defined as:</p>
 <div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[credInfo:]</span>
 <span class="go">  userKeyName: user.jks</span>
@@ -426,106 +438,391 @@ depends on the Cloud.</td>
 <span class="go">  keyPassword: pwdtest</span>
 </pre></div>
 </div>
-<p>It indicates that the user’s credential for ExoGENI is the key file ‘user.jks’. By default, this is the relative path. The file therefore should be in the same folder of this file and named as <code class="code docutils literal notranslate"><span class="pre">user.jks</span></code>. The fields <code class="code docutils literal notranslate"><span class="pre">keyAlias</span></code> and <code class="code docutils literal notranslate"><span class="pre">keyPassword</span></code> are related information to decrypt the key for acutal usage. The concrete fileds vary among different Clouds.</p>
+<p>It indicates that the user’s credential for ExoGENI is the key file ‘user.jks’. By default, this is the relative path. The file, therefore, should be in the same folder of this file and named as <code class="code docutils literal notranslate"><span class="pre">user.jks</span></code>. The fields <code class="code docutils literal notranslate"><span class="pre">keyAlias</span></code> and <code class="code docutils literal notranslate"><span class="pre">keyPassword</span></code> are related information to decrypt the key for actual usage. The concrete fields vary among different Clouds.</p>
 <p>Actually, some fields’ definition of above Cloud information can be user-defined to support a new Cloud. This is advanced usage, please check <a class="reference internal" href="advanced-usage.html"><span class="doc">Package (Advanced Usage)</span></a>.</p>
 </div>
 </div>
 <div class="section" id="infrastructure-description-syntax">
-<h2><a class="toc-backref" href="#id9">2.3. Infrastructure Description Syntax</a><a class="headerlink" href="#infrastructure-description-syntax" title="Permalink to this headline">¶</a></h2>
-<p>The figure below shows an example topology to demonstrate the partition-based infrastructure management mechanism adopted in CloudsStorm. We classify the application-defined topology description into three levels. The lowest level is the VM level. It describes the types of VMs required, mainly referring to the computing capacities, CPU, memory, etc. The level in the middle is the sub-topology level. It includes descriptions of several VMs in one data center and also describes the Cloud provider from which this data center comes from. The top level is the top-topology level. It includes all the sub-topologies and describes the network connections among these VMs. Internally, the network is defined as a private network, being that it is useful for the application to define the topology as such during the design phase. The actual network and geographical information is then transparent to the application. Otherwise, the IP addresses would need to be dynamically configured after provisioning or there must be an orchestrator to broker communications among sub-topologies, because the public IP address for each VM from the public Cloud is different every time. In addition, there is no actual switch placed among VMs but demonstrating how VMs are connected.</p>
+<span id="infra-des"></span><h2><a class="toc-backref" href="#id9">2.3. Infrastructure Description Syntax</a><a class="headerlink" href="#infrastructure-description-syntax" title="Permalink to this headline">¶</a></h2>
+<p>The figure below shows an example topology to demonstrate the partition-based infrastructure management mechanism adopted in CloudsStorm. We classify the application-defined topology description into three levels. The lowest level is the VM level. It describes the types of VMs required, mainly referring to the computing capacities, CPU, memory, etc. The level in the middle is the sub-topology level. It includes descriptions of several VMs in one data centre and also describes the Cloud provider from which this data centre comes from. The top level is the top-topology level. It includes all the sub-topologies and describes the network connections among these VMs. Internally, the network is defined as a private network, being that it is useful for the application to define the topology as such during the design phase. The actual network and geographical information are then transparent to the application. Otherwise, the IP addresses would need to be dynamically configured after provisioning or there must be an orchestrator to broker communications among sub-topologies, because the public IP address for each VM from the public Cloud is different every time. In addition, there is no actual switch placed among VMs but demonstrating how VMs are connected.</p>
 <img alt="_images/topology_des.png" src="_images/topology_des.png" />
+<div class="section" id="sub-topology-description">
+<span id="sub-topology"></span><h3><a class="toc-backref" href="#id10">2.3.1. Sub-topology description</a><a class="headerlink" href="#sub-topology-description" title="Permalink to this headline">¶</a></h3>
+<p>Sub-topology is the low-level description of the underlying infrastructure for running the application. One sub-topology is an entirety of VMs coming from the same data centre of a certain Cloud.</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">VMs:</span>
+<span class="go">- name: $Node</span>
+<span class="go">  nodeType: $Type</span>
+<span class="go">  OSType: $OS</span>
+<span class="go">  script: $Path</span>
+<span class="go">  [publicAddress: null]</span>
+<span class="go">- ∗</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">VMs:</th><td class="field-body">It indicates following is a list of VM descriptions.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">name:</th><td class="field-body">A user-defined node name of this VM. It should be unique in the entire infrastructure, e.g., <code class="code docutils literal notranslate"><span class="pre">node1</span></code>. This will also be the hostname of
+this VM. And this VM can be accessed from other connected VMs with this hostname, e.g., <code class="code docutils literal notranslate"><span class="pre">ping</span> <span class="pre">node1</span></code>. It is also worth to mention that all
+the connected VMs can SSH login each other in a <strong>password-free</strong> manner, e.g., directly use the command <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">root&#64;node1</span></code>. This is essential for further deploying PaaS on the infrastructure, such as hadoop, kubernetes, etc.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">nodeType:</th><td class="field-body">It indicates the computing capacity of the VM, such as <code class="code docutils literal notranslate"><span class="pre">t2.small</span></code> or <code class="code docutils literal notranslate"><span class="pre">t2.medium</span></code> for Cloud EC2.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">OSType:</th><td class="field-body">It indicates the specific operating system required by the application. The value of above two fields should be supported by the Cloud database
+information.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="file-definition" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">script:</th><td class="field-body">This is the script path, which is leveraged to install and configure the runtime environment for the application. There are
+three types of this string value. For instance, <code class="code docutils literal notranslate"><span class="pre">url&#64;</span></code> indicates this file comes from
+internet, e.g., <a class="reference external" href="mailto:url&#37;&#52;&#48;http">url<span>&#64;</span>http</a>://www.mydomain.com/pathToFile/; <code class="code docutils literal notranslate"><span class="pre">file&#64;</span></code> indicates the absolute path of the file, e.g., <a class="reference external" href="mailto:file&#37;&#52;&#48;/home/absolute">file<span>&#64;</span>/home/absolute</a>; <code class="code docutils literal notranslate"><span class="pre">name&#64;</span></code> only indicates the file name
+which is in the same folder of this sub-topology description file, e.g., <a class="reference external" href="mailto:name&#37;&#52;&#48;relative&#46;sh">name<span>&#64;</span>relative<span>&#46;</span>sh</a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">publicAddress:</th><td class="field-body">This field can be omitted. After provisioning, you can check the actual public address of this VM from this field.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="top-topology-description">
-<span id="top-topology"></span><h3><a class="toc-backref" href="#id10">2.3.1. Top-topology description</a><a class="headerlink" href="#top-topology-description" title="Permalink to this headline">¶</a></h3>
+<span id="top-topology"></span><h3><a class="toc-backref" href="#id11">2.3.2. Top-topology description</a><a class="headerlink" href="#top-topology-description" title="Permalink to this headline">¶</a></h3>
+<p>Top-topology is the top-level description of the underlying infrastructure for running the application. It describes where sub-topologies are and how they are connected. This file is always named as ‘_top.yml’.</p>
 <div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">userName: $User</span>
 <span class="go">publicKeyPath: $Path</span>
 <span class="go">topologies:</span>
 <span class="go">- topology: $SubTopology</span>
 <span class="go">  cloudProvider: $Cloud</span>
 <span class="go">  domain: $DC</span>
-<span class="go">  status: &#39;fresh | running | deleted | failed | stopped&#39;</span>
+<span class="go">  [status: &#39;fresh | running | deleted | failed | stopped&#39;]</span>
 <span class="go">- ∗</span>
 <span class="go">subnets:</span>
-<span class="go">name: $Subnet</span>
-<span class="go">subnet: $subnet</span>
-<span class="go">netmask: $netmask</span>
-<span class="go">members:</span>
-<span class="go">- vmName: $SubTopology.$Node</span>
-<span class="go">  address: $IP</span>
-<span class="go">- ∗</span>
+<span class="go">- name: $String</span>
+<span class="go">  subnet: $subnet</span>
+<span class="go">  netmask: $netmask</span>
+<span class="go">  members:</span>
+<span class="go">  - vmName: $SubTopology.$Node</span>
+<span class="go">    address: $IP</span>
+<span class="go">  - ∗</span>
+<span class="go">- *</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sub-topology-description">
-<span id="sub-topology"></span><h3><a class="toc-backref" href="#id11">2.3.2. Sub-topology description</a><a class="headerlink" href="#sub-topology-description" title="Permalink to this headline">¶</a></h3>
-<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">VMs:</span>
-<span class="go"> name: $Node</span>
-<span class="go"> nodeType: $Type</span>
-<span class="go"> OSType: $OS</span>
-<span class="go"> script: $Path</span>
-<span class="go"> - ∗</span>
-</pre></div>
-</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">userName:</th><td class="field-body"><p class="first">It indicates a unified user-defined SSH account name, <code class="code docutils literal notranslate"><span class="pre">$User</span></code>, to login to all the VMs no matter which Cloud the VM comes from. This
+user account has the <em>sudo</em> permission. It can also be set as <code class="code docutils literal notranslate"><span class="pre">null</span></code>. The new account then will not be configured.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">publicKeyPath:</th><td class="field-body"><p class="first">The path of the corresponding public key to configure the above SSH user account. Then the user can login to any VM with the
+corresponding private key and account. The command is similar with <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-i</span> <span class="pre">$PriKey</span> <span class="pre">$User&#64;$PubIP</span></code>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">topologies:</th><td class="field-body"><p class="first">This indicates a list of sub-topologies. Following are the definitions of the fields in one sub-topology element.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">topology:</th><td class="field-body">The name of the sub-topology. It is user-defined. It also works as an index to locate the detailed sub-topology description. The
+sub-topology description file is named as <code class="code docutils literal notranslate"><span class="pre">$SubTopology.yml</span></code> in the same folder. See its syntax from <a class="reference internal" href="#sub-topology"><span class="std std-ref">Sub-topology description</span></a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">cloudProvider:</th><td class="field-body">The name of the Cloud defined in the Cloud database information. It indicates which Cloud this sub-topology comes from.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">domain:</th><td class="field-body">The name of the data centre defined in the Cloud database information. It indicates which Cloud this sub-topology comes from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">status:</th><td class="field-body">It indicates the current status of this sub-topology. For basic usage, it just needs to be set as <code class="code docutils literal notranslate"><span class="pre">fresh</span></code> or <code class="code docutils literal notranslate"><span class="pre">null</span></code> to represent it
+is in the design phase. This entire field can also be omitted. Because it equals to assign <code class="code docutils literal notranslate"><span class="pre">null</span></code> with field “status”.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">subnets:</th><td class="field-body"><p class="first">This indicates a list of subnets to connect above sub-topologies. Following are the definitions of the fields in one subnet element.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body"><p class="first">This is a user-defined string to identify the name of this subnet.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">subnet:</th><td class="field-body"><p class="first">The value here is a network subnet definition, e. g. <code class="code docutils literal notranslate"><span class="pre">192.168.10.0</span></code>. This is a private subnet.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">netmask:</th><td class="field-body"><p class="first">The value here is a network netmask definition, e. g. <code class="code docutils literal notranslate"><span class="pre">255.255.255.0</span></code> or <code class="code docutils literal notranslate"><span class="pre">24</span></code>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">members:</th><td class="field-body"><p class="first">This field defines another list of elements to show which VMs are included in this subnet.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">vmName:</th><td class="field-body">The full name of the VM. It consists of the sub-topology name and node name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">address:</th><td class="field-body">The user-defined private IP address of the VM in this subnet, e. g. <code class="code docutils literal notranslate"><span class="pre">192.168.10.11</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="infrastructure-code-syntax">
-<h2><a class="toc-backref" href="#id12">2.4. Infrastructure Code Syntax</a><a class="headerlink" href="#infrastructure-code-syntax" title="Permalink to this headline">¶</a></h2>
-<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;SEQ | LOOP&#39;</span>
+<span id="infra-code"></span><h2><a class="toc-backref" href="#id12">2.4. Infrastructure Code Syntax</a><a class="headerlink" href="#infrastructure-code-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Based on the above application-defined topology description, application developers can further develop the infrastructure code to execute and run their applications on Clouds. The infrastructure code is basically a set of operations defined sequentially in a list. In order to combine these basic operations to complete a complex task, we define two types of code to do the operation, ‘SEQ’ and ‘LOOP’.</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Mode: &#39;LOCAL | CTRL&#39;]</span>
+<span class="go">InfrasCodes:</span>
+<span class="go">- CodeType: &#39;SEQ | LOOP&#39;</span>
 <span class="go">- ∗</span>
 </pre></div>
 </div>
-<div class="section" id="seq-operation">
-<h3><a class="toc-backref" href="#id13">2.4.1. ‘SEQ’ operation</a><a class="headerlink" href="#seq-operation" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Mode:</th><td class="field-body"><p class="first">This field tells that how this infrastructure code runs:</p>
+<ul class="simple">
+<li>‘LOCAL’: Running in this local machine without a remote control agent.</li>
+<li>‘CTRL’: This infrastructure code is exeucted on a remote control agent and the infrastructure will be managed by this agent. This is similar with executing an application in a background mode.</li>
+</ul>
+<p class="last">If this field is omitted, the default value for <code class="code docutils literal notranslate"><span class="pre">Mode</span></code> is ‘CTRL’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">When in the mode of ‘CTRL’, there must be a sub-topology called ‘_ctrl’ defined in top-topology. In its detailed sub-topology description, it only needs to contain a small VM to be the control agent. Check the examples.</p>
+</div>
+<div class="section" id="seq-code-syntax">
+<span id="seq-code"></span><h3><a class="toc-backref" href="#id13">2.4.1. ‘SEQ’ code syntax</a><a class="headerlink" href="#seq-code-syntax" title="Permalink to this headline">¶</a></h3>
+<p>‘SEQ’ code only contains one operation. A list of ‘SEQ’ codes is executed one at a time.</p>
 <div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;SEQ&#39;</span>
 <span class="go">  OpCode:</span>
-<span class="go">  Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
-<span class="go">  [Options:]</span>
-<span class="go">  - [$S1: $S2]</span>
-<span class="go">  - ∗</span>
-<span class="go">  [Command: $String]</span>
-<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
-<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
+<span class="go">    Operation: &#39;provision | delete | execute | put | get | vscale | hscale | recover | start | stop&#39;</span>
+<span class="go">    [Options:</span>
+<span class="go">    - $S1: $S2</span>
+<span class="go">    - ∗]</span>
+<span class="go">    [Command: $String]</span>
+<span class="go">    [Log: &#39;on | off&#39;]</span>
+<span class="go">    ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">    Objects: $Object1 [ || $Object2] ...</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">CodeType:</th><td class="field-body">This field indicates the type of this code. Currently, there are only two types, ‘SEQ’ and ‘LOOP’.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" id="op-code" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">OpCode:</th><td class="field-body"><p class="first">This field only contains one element, which describes one operation.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ObjectType:</th><td class="field-body"><p class="first">This field indicates the object type of this operation. According to the specific operation, the object can be, ‘SubTopology’,
+some entire sub-topologies; ‘VM’, some individual VMs; ‘REQ’, some requests, only used when ‘vscale’, ‘hscale’ or ‘recover’.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Objects:</th><td class="field-body"><p class="first">It indicates a set of objects, which this operation impacts. If the <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> is ‘SubTopology’, the name of the object is
+the sub-topology name; If the <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> is ‘VM’, the name of the object is the VM full name, containing sub-topology and VM node name, such as, ‘$SubTopology.$Node’; If the <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> is ‘REQ’, the name of the object is previously generated request name.</p>
+<p>Symbol <code class="code docutils literal notranslate"><span class="pre">||</span></code> is leveraged here to combine these objects. On the other hand, it simply defines that this is a parallel operation. This operation will impact all these objects simultaneously.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Operation:</th><td class="field-body"><p class="first">It indicates the type of the operation. There are 10 operations supported currently.</p>
+<ul class="simple">
+<li>‘provision’: Provision the defined objects (resources). <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’ or ‘VM’.</li>
+<li>‘delete’: Delete the defined objects (resources). <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’ or ‘VM’.</li>
+<li>‘execute’: Execute some command on the objects. The detailed command is specified in the filed <code class="code docutils literal notranslate"><span class="pre">Command</span></code> below. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> currently can only be ‘VM’.</li>
+<li>‘put’: Upload some input data or files to the remote resources. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> currently can only be ‘VM’.</li>
+<li>‘get’: Download or retrieve output results or files from the remote resources. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> currently can only be ‘VM’.</li>
+<li>‘vscale’: Vertically scale up or down to adapt the computing capability of the infrastructure through directly changing the capacity of some VM. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can only be ‘VM’ and ‘REQ’.</li>
+<li>‘hscale’: Horizontally scale out or in to adapt the computing capability of the infrastructure through changing the number of VMs. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’, ‘VM’ or ‘REQ’.</li>
+<li>‘recover’: Recover some failed sub-topologies. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’ or ‘REQ’.</li>
+<li>‘start’: Start the objects, if the Cloud support “start/stop” operations on VMs. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’ or ‘VM’. Start a VM is faster than provisioning a VM. Hence, this is good to enhance the operation efficiency, if supported by the Cloud.</li>
+<li>‘stop’: Stop the objects, if the Cloud support “start/stop” operations on VMs. <code class="code docutils literal notranslate"><span class="pre">ObjectType</span></code> can be ‘SubTopology’ or ‘VM’.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Options:</th><td class="field-body"><p class="first">Some options defined for this operation. They are key-value pairs. It depends on the specific operation.</p>
+<blockquote>
+<div><p>When the operation is ‘put’:</p>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Src:</th><td class="field-body"><p class="first">File path on the local machine, where executing this infrastructure code.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Dst:</th><td class="field-body"><p class="first">File path on the remote object VM.</p>
+<p>When the operation is ‘get’:</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Src:</th><td class="field-body"><p class="first">File path on the remote object VM.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Dst:</th><td class="field-body"><p class="first">File path on the local machine, where executing this infrastructure code.</p>
+<p class="last">The syntax of all the above files is the same with the field <code class="code docutils literal notranslate"><span class="pre">script</span></code> in sub-topology.
+Check the <a class="reference internal" href="#file-definition"><span class="std std-ref">file path syntax</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Command:</th><td class="field-body"><p class="first">The detailed command, when the operation is ‘execute’. Otherwise, this field can be omitted.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Log:</th><td class="field-body"><p class="first last">This is a switch to identify whether we need logging for this operation. Because outputs of the operation sometimes are enormous or nonsense.
+We do not want to log. When omitting this field, the event will be logged by default.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="section" id="loop-operation">
-<h3><a class="toc-backref" href="#id14">2.4.2. ‘LOOP’ operation</a><a class="headerlink" href="#loop-operation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="loop-code-syntax">
+<h3><a class="toc-backref" href="#id14">2.4.2. ‘LOOP’ code syntax</a><a class="headerlink" href="#loop-code-syntax" title="Permalink to this headline">¶</a></h3>
+<p>‘LOOP’ code contains several operations and performs repeatedly for a number of iterations or for a certain time period.</p>
 <div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- CodeType: &#39;LOOP&#39;</span>
-<span class="go">[Count: $Num]</span>
-<span class="go">[Duration: $Time]</span>
-<span class="go">[Deadline: $Time]</span>
-<span class="go">OpCode:</span>
-<span class="go">- Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
-<span class="go">  [Options:]</span>
-<span class="go">  - [$S1: $S2]</span>
-<span class="go">  - ∗</span>
-<span class="go">  [Command: $CMD]</span>
-<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
-<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
-<span class="go">- *</span>
+<span class="go">  [Count: $Num]</span>
+<span class="go">  [Duration: $Time]</span>
+<span class="go">  [Deadline: $Time]</span>
+<span class="go">  OpCode:</span>
+<span class="go">  - Operation: &#39;provision | delete | execute | put | get | vscale | hscale | recover | start | stop&#39;</span>
+<span class="go">    [Options:]</span>
+<span class="go">    - [$S1: $S2]</span>
+<span class="go">    - ∗</span>
+<span class="go">    [Command: $CMD]</span>
+<span class="go">    ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">    Objects: $Object1 [ || $Object2] ...</span>
+<span class="go">  - *</span>
 </pre></div>
 </div>
+<p>The difference with the above ‘SEQ’ code is that there are three fields to control the loop and field <code class="code docutils literal notranslate"><span class="pre">OpCode</span></code> defines a set of operations instead of one. Controlling conditions are determined by following three fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Count:</th><td class="field-body">This is defined as a maximum number of iterations for this loop.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Duration:</th><td class="field-body">This is defined as the maximum amount of time for executing in this loop.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Deadline:</th><td class="field-body">This is defined as a certain timing to exit this loop.</td>
+</tr>
+</tbody>
+</table>
+<p>The meaning of other fields is the same as above <a class="reference internal" href="#seq-code"><span class="std std-ref">‘SEQ’ code syntax</span></a>.</p>
+</div>
+<div class="section" id="some-system-variables">
+<h3><a class="toc-backref" href="#id15">2.4.3. Some system variables</a><a class="headerlink" href="#some-system-variables" title="Permalink to this headline">¶</a></h3>
+<p>There are some system variables defined in the syntax of infrastructure code. You can use these strings in some commands or options to simply represent some system variables. The actual part of the string in the command or option text will be replaced with the real variable value.</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">$counter</span></code>: This is used in a loop. It will be replaced by the actual count number in the loop.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">$time</span></code>: It indicates the current Unix timestamp.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">$cur_dir</span></code>: The absolute path of the current directory, where this infrastructure code is.</li>
+<li><code class="code docutils literal notranslate"><span class="pre">$root_dir</span></code>: The absolute path of the root directory, which refers to this entire file structure.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="logs-syntax">
-<span id="id3"></span><h2><a class="toc-backref" href="#id15">2.5. Logs Syntax</a><a class="headerlink" href="#logs-syntax" title="Permalink to this headline">¶</a></h2>
-<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- Time: $Time</span>
-<span class="go">Overhead: $Time</span>
-<span class="go">Event:</span>
-<span class="go">  Operation: &#39;provision | delete | execute | put | get | vscale | hscale [| start | stop]&#39;</span>
-<span class="go">  Command: $CMD</span>
-<span class="go">  [Options:]</span>
-<span class="go">  - [$S1: $S2]</span>
-<span class="go">  - ∗</span>
-<span class="go">  Log: &#39;on | off&#39;</span>
-<span class="go">  ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
-<span class="go">  Objects: $Object_1 [ || $Object_2] ...</span>
-<span class="go">LOG:</span>
-<span class="go">  MSG: $String</span>
-<span class="gp">  $</span>Object_1: <span class="nv">$String</span>
-<span class="go">  *</span>
+<span id="id3"></span><h2><a class="toc-backref" href="#id16">2.5. Logs Syntax</a><a class="headerlink" href="#logs-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For basic usage, you do not need to learn this part. They will be generated automatically.</p>
+</div>
+<p>There are two types of logs, the log of CloudsStorm framework and the log of executing infrastructure code. For basic usage, you only need to know the latter one. The log of the infrastructure code is also in YAML format. Each operation defined in the infrastructure code above will generate one element of record and add to the logging file. This is the syntax.</p>
+<div class="code yaml highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">LOGs:</span>
+<span class="go">- Time: $Time</span>
+<span class="go">  Overhead: $Time</span>
+<span class="go">  Event:</span>
+<span class="go">    Operation: &#39;provision | delete | execute | put | get | vscale | hscale | recover | start | stop&#39;</span>
+<span class="go">    Command: $CMD</span>
+<span class="go">    [Options:]</span>
+<span class="go">    - [$S1: $S2]</span>
+<span class="go">    - ∗</span>
+<span class="go">    Log: &#39;on | off&#39;</span>
+<span class="go">    ObjectType: &#39;SubTopology | VM | REQ&#39;</span>
+<span class="go">    Objects: $Object1 [ || $Object2] ...</span>
+<span class="go">  LOG:</span>
+<span class="go">    MSG: $String</span>
+<span class="gp">    $</span>Object1: <span class="nv">$String</span>
+<span class="go">    *</span>
 <span class="go">- *</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Time:</th><td class="field-body"><p class="first">This field records when this operation happens. It is in the format of Unix timestamp.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Overhead:</th><td class="field-body"><p class="first">This is the overhead of this operation. It records the time duration from starting to finishing this operation.
+It is in the unit of millisecond.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Event:</th><td class="field-body"><p class="first">This field records the operation element, which generates this log. The syntax is the same as the <code class="code docutils literal notranslate"><span class="pre">OpCode</span></code> above.
+See <a class="reference internal" href="#op-code"><span class="std std-ref">syntax</span></a>.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">LOG:</th><td class="field-body"><dl class="first docutils">
+<dt>This records the logging information of this operation. If the operation is the ‘execute’, the output of the command will also be recorded.</dt>
+<dd><p class="first last">It is easy to read. You can know the meaning of this record just from the key string. Here are some examples.</p>
+</dd>
+</dl>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">MSG:</th><td class="field-body">This is the general logging information of this operation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">$Object:</th><td class="field-body">Since there are some parallel operations, this is used to identify the output from different objects.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">$Object#pubIP:</th><td class="field-body">The public IP of this object after the provisioning operation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">$Object#Provision:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The provisioning overhead of this resource. The format of its value is <code class="code docutils literal notranslate"><span class="pre">$time1&#64;$time2</span></code>. <code class="code docutils literal notranslate"><span class="pre">$time1</span></code> is a relative time
+duration for provisioning, which is in the unit of millisecond. <code class="code docutils literal notranslate"><span class="pre">$time2</span></code> is the Unix timestamp to record the start time.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="command-lines">
+<h2><a class="toc-backref" href="#id17">2.6. Command Lines</a><a class="headerlink" href="#command-lines" title="Permalink to this headline">¶</a></h2>
+<p>For basic usage, before running these command lines to execute your infrastructure code, you need to know how to define your <a class="reference internal" href="#infra-des"><span class="std std-ref">infrastructure topology</span></a> and write your <a class="reference internal" href="#infra-code"><span class="std std-ref">infrastructure code</span></a>. Then you can go on with following command lines.</p>
+<dl class="docutils">
+<dt>java -jar CloudsStorm.jar execute srcDir</dt>
+<dd>This command is used to execute the infrastructure code in the directory of <code class="code docutils literal notranslate"><span class="pre">srcDir</span></code>, which is the root directory of the entire file structure described above.</dd>
+<dt>java -jar CloudsStorm.jar run srcDir</dt>
+<dd>This command is used to execute the infrastructure code in the directory of <code class="code docutils literal notranslate"><span class="pre">srcDir</span></code>, but only in ‘LOCAL’ mode. This is useful when you want to restart executing the infrastructure code from a control agent.</dd>
+<dt>java -jar CloudsStorm.jar delete srcDir all/ctrl</dt>
+<dd>This command is used to delete some extra resources. When the option is ‘all’, this command deletes all the resources except the controlling agent. When it is ‘ctrl’, this command deletes all the resources including the controlling agent.</dd>
+</dl>
 </div>
 </div>
 

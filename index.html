@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                41f427a
+                80debbe
               </div>
             
           
@@ -156,24 +156,25 @@
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-cloudsstorm">
 <h2>What is CloudsStorm?<a class="headerlink" href="#what-is-cloudsstorm" title="Permalink to this headline">¶</a></h2>
-<p>CloudsStorm is a framework for managing an application-defined infrastructure among public IaaS (Infrastucture-as-a-Service) Clouds. It enables the application to customize its underlying infrastructure at software development phase and dynamicly control it at operation phase. To be specific, the advantages and features are as follows:</p>
+<p>CloudsStorm is a framework for managing an application-defined infrastructure among public IaaS (Infrastructure-as-a-Service) Clouds. It enables the application to customize its underlying infrastructure at software development phase and dynamically control it at operation phase. To be specific, the advantages and features are as follows:</p>
 <ul class="simple">
-<li><strong>Programmabe</strong> ;</li>
-<li><strong>Controllable</strong> ;</li>
-<li><strong>Interoperable</strong> ;</li>
-<li><strong>Reusable</strong> ;</li>
+<li><strong>Programmable</strong>: The underlying Cloud virtual infrastructure can be customized and programmed at software development phase to fit the application requirements. Furthermore, the connection topology with a private network can also be defined in advance.</li>
+<li><strong>Controllable</strong>: CloudsStorm leverages the minimal function provided by Cloud and affords high-level controllability, including failure recovery, auto-scaling, etc. Therefore, the infrastructure can be easily controlled by the application at operation phase.</li>
+<li><strong>Interoperable</strong>: CloudsStorm is able to manage virtual infrastructure among federated Clouds. Hence, this is not a vendor lock-in solution.</li>
+<li><strong>Reusable</strong>: We propose “infrastructure code” to describe dynamic operations on the infrastructure, instead of only static infrastructure description or deployment plan. It is able to define and automate all processes including provisioning, deploying, executing and releasing. This code is reusable and the entire process is reproducible, as long as you have a budget to access the Cloud.</li>
 </ul>
-</div>
-<div class="section" id="why-do-we-need-this">
-<h2>Why do we need this?<a class="headerlink" href="#why-do-we-need-this" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="how-does-it-work">
 <h2>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h2>
+<p>This is the framework overview.</p>
+<img alt="_images/program_framework.png" src="_images/program_framework.png" />
+<p>In this framework, there are three kinds of code, including infrastructure code, application code and runtime control policy. Cloud applications need only leverage these to control the whole lifecycle of the infrastructure their applications rely on, including phases of provisioning, deployment, auto-scaling and destruction. Among these code types, the infrastructure code is the core of the framework. It first allows application developers to describe the infrastructure fit for the application. It also includes the network topology. Then it indicates which execution code should be running on which node of the infrastructure. The execution code is the part that the application developer should initially focus on. It is the main logic for the Cloud application. The difference here is that the controlling logic can be embedded in the execution code to allow the application to directly control the infrastructure on demand. At last, the infrastructure code defines the runtime control policy for dynamically managing the infrastructure at runtime.</p>
 </div>
 <div class="section" id="how-about-learning-more">
 <h2>How about learning more?<a class="headerlink" href="#how-about-learning-more" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Documentation: <a class="reference external" href="https://cloudsstorm.github.io/">https://cloudsstorm.github.io/</a></li>
+<li>Downlond release: <a class="reference external" href="https://github.com/CloudsStorm/Standalone/releases">https://github.com/CloudsStorm/Standalone/releases</a></li>
 <li>GitHub repository: <a class="reference external" href="https://github.com/zh9314/CloudsStorm">https://github.com/zh9314/CloudsStorm</a></li>
 <li>We present a poster about CloudsStorm at ICT OPEN 2018 in the Netherlands (See <a class="reference external" href="https://zh9314.github.io/files/publications/posters/ictopen18.pdf">Poster</a>).</li>
 </ul>
@@ -182,7 +183,7 @@
 <h2>How about participating?<a class="headerlink" href="#how-about-participating" title="Permalink to this headline">¶</a></h2>
 <p>Questions, comments, some testing credential requests, bug reports, etc. can be directed to:</p>
 <ul class="simple">
-<li>my eamil: <em>h.zhou&#64;uva.nl</em></li>
+<li>my email: <em>h.zhou&#64;uva.nl</em></li>
 <li>issues on GitHub</li>
 </ul>
 <p>Since this is an ongoing work. Patches and collaborations on the software are much appreciated.</p>
@@ -196,7 +197,7 @@ is included in file LICENSE.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This documentation is for CloudsStorm version 1.0 (Git commit
-41f427a) and was built 2018-04-18 12:43 GMT+00:00.</p>
+80debbe) and was built 2018-04-19 14:17 GMT+00:00.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
